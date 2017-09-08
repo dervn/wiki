@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <title>Mac 命令行 - </title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Mac">Mac</a>&nbsp;&#187;&nbsp;Mac 命令行
+    <span class="updated">Page Updated&nbsp;
+      2017-09-06 00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">Mac 命令行</div>
+
+  <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">计算目录文件大小</a></li>
+<li><a href="#_2">显示隐藏文件</a></li>
+<li><a href="#targz">解压缩.tar.gz文件</a></li>
+</ul>
+</div>
+<h2 id="_1">计算目录文件大小</h2>
+<div class="hlcode"><pre><span class="n">du</span> <span class="o">-</span><span class="n">sh</span> <span class="o">*</span>
+<span class="n">du</span> <span class="o">-</span><span class="n">shc</span> <span class="o">*</span> <span class="err">#可最后显示一个</span><span class="n">Total</span><span class="err">大小，即当前目录的总大小</span>
+</pre></div>
+
+
+<p>参考：<a href="http://apple.stackexchange.com/questions/6595/what-command-combo-at-terminal-will-output-a-list-of-directories-with-human-read">What command combo at terminal will output a list of directories with human-readable sizes?</a></p>
+<h2 id="_2">显示隐藏文件</h2>
+<div class="hlcode"><pre><span class="n">defaults</span> <span class="n">write</span> <span class="n">com</span><span class="p">.</span><span class="n">apple</span><span class="p">.</span><span class="n">finder</span> <span class="n">AppleShowAllFiles</span> <span class="o">-</span><span class="kt">bool</span> <span class="nb">true</span><span class="p">;</span><span class="n">KillAll</span> <span class="n">Finder</span>
+<span class="n">defaults</span> <span class="n">write</span> <span class="n">com</span><span class="p">.</span><span class="n">apple</span><span class="p">.</span><span class="n">finder</span> <span class="n">AppleShowAllFiles</span> <span class="o">-</span><span class="kt">bool</span> <span class="nb">false</span><span class="p">;</span><span class="n">KillAll</span> <span class="n">Finder</span> <span class="err">#</span> <span class="err">关闭显示隐藏功能</span>
+</pre></div>
+
+
+<p><a href="show-hidden-script.html">GUI</a></p>
+<h2 id="targz">解压缩.tar.gz文件</h2>
+<div class="hlcode"><pre><span class="n">tar</span> <span class="n">czf</span> <span class="n">jpg</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span> <span class="o">*</span><span class="p">.</span><span class="n">jpg</span> <span class="err">#将目录里所有</span><span class="n">jpg</span><span class="err">文件打包成</span><span class="n">jpg</span><span class="p">.</span><span class="n">tar</span><span class="err">后，并且将其用</span><span class="n">gzip</span><span class="err">压缩，生成一个</span><span class="n">gzip</span><span class="err">压缩过的包，命名为</span><span class="n">jpg</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">tar</span> <span class="n">zxvf</span> <span class="n">test</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span> <span class="err">#解压</span>
+<span class="n">tar</span> <span class="n">xzvf</span> <span class="n">test</span><span class="p">.</span><span class="n">py</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">C</span> <span class="n">test1</span><span class="o">/</span> <span class="err">#解压文件到指定文件夹</span>
+</pre></div>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 .
+        Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
+        <p>Site Generated 2017-09-08 12:38:24</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+</html>

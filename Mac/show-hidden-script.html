@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <title>AppleScript 切换显示/隐藏GUI - </title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#Mac">Mac</a>&nbsp;&#187;&nbsp;AppleScript 切换显示/隐藏GUI
+    <span class="updated">Page Updated&nbsp;
+      2017-09-08 00:00
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">AppleScript 切换显示/隐藏GUI</div>
+
+  <h2 id="applescript-gui">AppleScript 切换显示/隐藏GUI</h2>
+<p>作者：Linkzero Tsang<br />
+链接： https://www.zhihu.com/question/24635640/answer/28455134</p>
+<p>鼓捣过一个 AppleScript, 做了个有 GUI 的小程序。可以打开 AppleScript 编辑器 这个自带 App, 新建一个文档，将下面的代码粘贴进去，编译，然后导出 .app 应用程序，方便切换显示/隐藏两个状态。</p>
+<div class="hlcode"><pre><span class="n">display</span> <span class="n">dialog</span> <span class="s">&quot;隐藏/显示隐藏文件&quot;</span> <span class="n">buttons</span> <span class="p">{</span><span class="s">&quot;可见&quot;</span><span class="p">,</span> <span class="s">&quot;隐藏&quot;</span><span class="p">}</span> <span class="n">with</span> <span class="n">icon</span> <span class="mi">2</span> <span class="n">with</span> <span class="n">title</span> <span class="s">&quot;Switch to presentation mode&quot;</span> <span class="k">default</span> <span class="n">button</span> <span class="mi">1</span>
+
+<span class="n">set</span> <span class="k">switch</span> <span class="n">to</span> <span class="n">button</span> <span class="n">returned</span> <span class="n">of</span> <span class="n">result</span>
+
+<span class="k">if</span> <span class="k">switch</span> <span class="n">is</span> <span class="s">&quot;隐藏&quot;</span> <span class="n">then</span>
+    <span class="k">do</span> <span class="n">shell</span> <span class="n">script</span> <span class="s">&quot;defaults write com.apple.finder AppleShowAllFiles -bool false;</span>
+<span class="n">KillAll</span> <span class="n">Finder</span><span class="s">&quot;</span>
+
+<span class="k">else</span>
+    <span class="k">do</span> <span class="n">shell</span> <span class="n">script</span> <span class="s">&quot;defaults write com.apple.finder AppleShowAllFiles -bool true;</span>
+<span class="n">KillAll</span> <span class="n">Finder</span><span class="s">&quot;</span>
+
+<span class="n">end</span> <span class="k">if</span>
+</pre></div>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 .
+        Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
+        <p>Site Generated 2017-09-08 12:38:24</p>
+      </span>
+    </div>
+
+    
+    
+  </body>
+</html>
